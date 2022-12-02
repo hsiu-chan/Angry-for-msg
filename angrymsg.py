@@ -42,7 +42,11 @@ for filename in listdir(input_path):
         if len(c)<3:
             continue
         c=np.squeeze(c)
+        ca=(np.max(c[:,0])-np.min(c[:,0]))*(np.max(c[:,1])-np.min(c[:,1]))
+
         if polygon_area(c)/(h*w)<1/800:
+            continue
+        if polygon_area(c)/ca<0.85:
             continue
         emoji.append([np.max(c[:,0]), np.max(c[:,1])])
     print(emoji)
@@ -55,5 +59,5 @@ for filename in listdir(input_path):
     result=mg.open(fig_path)
     for p in emoji:
         result.paste(angry, (p[0]-2*n,p[1]-int(n*0.4)),mask=a)
-
+    
     result.save(output_path+'/'+filename, format=None)
