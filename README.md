@@ -7,6 +7,7 @@ Put the screenshot of chatroom into "./input" and excute "angrymsg.exe". The res
 ## Example
 
 **input**
-![](example/input.png)
+<img src="example/input.png" alt="Cover" width="30%"/>
+
 **result**
-![](example/result.png)
+<img src="example/result.png" alt="Cover" width="30%"/>
